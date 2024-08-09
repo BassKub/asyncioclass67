@@ -1,0 +1,5 @@
+start_time = time.perf_counter()
+    pokemons = await get_pokemons()
+    end_time = time.perf_counter()
+    print(f"{time.ctime()} - Asynchronous get {len(pokemons)} pokemons. Time taken: {end_time-start_time} seconds")
+    return await render_template('index.html', pokemons=pokemons, end_time=end_time, start_time=start_time)
